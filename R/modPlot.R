@@ -13,7 +13,7 @@
 modPlot <- function(mod, x, dv, xlab, ylab, ref, foc){
   moderator <- seq(min(x, na.rm = T), max(x, na.rm = T), by = .05)
   params <- coef(mod)
-  M <- mean(eat_data$w1eatsym)
+  # M <- mean(eat_data$w1eatsym)
   focal <- params[[1]] + params[[2]]*M + params[[3]] + (params[[4]] + params[[5]])*moderator
   reference <- params[[1]] + params[[2]]*M + params[[4]]*moderator
   plot(dv ~  x, type = "n", xlab = xlab, ylab = ylab, ylim = c(min(focal, reference), max(focal, reference)))
